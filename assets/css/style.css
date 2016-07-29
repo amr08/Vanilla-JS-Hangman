@@ -1,0 +1,31 @@
+
+body {
+	background: url("https://raw.githubusercontent.com/amr08/Portfolio/master/assets/img/beautiful-beach-wide-hd-wallpaper-for-desktop-background-download-beach-images-free.jpg");
+	background-repeat: no-repeat;
+	background: cover;
+	background-attachment: fixed;
+}
+.wrapper {
+	border: 2px solid black;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 40px;
+	height: 600px; /*dont forget to delete*/
+	padding-top:20px;
+	background-color: tan;
+	border-radius: 40px;
+	opacity: .8;
+
+
+}
+
+h1 {
+	font-family: "rancho";
+	color: #00bc8c;
+	font-size: 150px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top:60px;
+	margin-bottom: 40px;
+
+}
