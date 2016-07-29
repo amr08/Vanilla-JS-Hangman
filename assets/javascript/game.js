@@ -5,39 +5,49 @@
  alert("Press any key to get started");
 
 
-	//document.onkeyup = function(event) {
+//answer: beachboys
 
-		//var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+var answer = ["b","e","a","c","h","b","o","y","s"];
+
+//HTML Wins and guesses
+var wins = 0;
+var guessesleft = 25;
 	
-	  //document.write(userGuess);
-
-	//}
-
-//beachboys
-//targeted and printed alphabet
-
-
-
-       document.onkeyup = function(event) {
+        document.onkeyup = function(event) {
 
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	
-	  alert(userGuess);
+	    console.log(userGuess);
 
-	var answer = ["b","e","a","c","h","b","o","y","s"]
+		for(var i=0; i < answer.length; i++) {
+		
+			 if(userGuess == answer[i]) {
+ 			 wins++;
+  
+         	}
+         }
 
-	for(var i=0; i < event.length; i++) {
-	console.log(answer[i]);
+         if (userGuess !== answer[i]) {
+        	guessesleft--;
+           }
+ //HTML
+var html = "<p>Wins: " + wins + "</p>" +
+		"<p>Guessesleft " + guessesleft + "</p>";
 
-	}
+document.querySelector("#game").innerHTML = html;
 
- if (userGuess === answer[i]) {
- 	alert("you got it");
- }
- 
- }
+	}		
 
-//html Wins
+
+
+
+
+
+
+
+
+
+
 
 //html Current word
 
