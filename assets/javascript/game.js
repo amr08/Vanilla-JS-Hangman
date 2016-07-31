@@ -5,44 +5,117 @@
  alert("Press any key to get started");
 
 
+var wins = 0;
+var guessesleft = 12;
+
+
+var correct = {
+	
+	b: "b",
+	e: "e",
+	a: "a",
+	c: "c",
+	h: "h",
+	b2: "b",
+	o: "o",
+	y: "y",
+	s: "s",
+
+}
+
+
 //answer: beachboys
 
-var answer = ["b","e","a","c","h","b","o","y","s"];
+//var answer = ["b","e","a","c","h","b","o","y","s"];
 
 //HTML Wins and guesses
-var wins = 0;
-var guessesleft = 25;
-	
+
+
+
         document.onkeyup = function(event) {
 
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	
-	    console.log(userGuess);
+	   
 
-		for(var i=0; i < answer.length; i++) {
+		//for(var i=0; i < answer.length; i++) {
+
+
 		
-			 if(userGuess == answer[i]) {
+             if(userGuess === "b") {
  			 wins++;
-  
-         	}
-         }
+ 			 var correctb = "<p> " + correct.b + " _ _ _ _ " + correct.b2 + "_ _ _ </p>";
+             document.querySelector("#name").innerHTML = correctb;
+ 			 }
+ 			
 
-         if (userGuess !== answer[i]) {
-        	guessesleft--;
-           }
- //HTML
+			if(userGuess === "e") {
+ 			 wins++;
+ 			 (correct.e);
+           
+             }
+             if(userGuess === "a") {
+ 			 wins++;
+ 			 console.log(correct.a);
+            
+             }
+             if(userGuess === "c") {
+ 			 wins++;
+ 			 console.log(correct.c);
+            
+             }
+             if(userGuess === "h") {
+ 			 wins++;
+ 			 console.log(correct.h);
+            
+             }
+            
+             
+             if(userGuess === "o") {
+ 			 wins++;
+ 			 console.log(correct.o);
+            
+
+             }if(userGuess === "y") {
+ 			 wins++;
+ 			 console.log(correct.y);
+            
+             }
+             if(userGuess === "s") {
+ 			 wins++;
+ 			 console.log(correct.s);
+            
+             }
+         	
+
+		
+
+             else {
+             	guessesleft--;
+             }
+         
+
+        
+
+
+
+
+
+
+
+ 
+
 var html = "<p>Wins: " + wins + "</p>" +
 		"<p>Guessesleft " + guessesleft + "</p>";
 
 document.querySelector("#game").innerHTML = html;
 
-	}		
 
+//var corrects = "<p> _ _ _ _ _ _ _ _ _ </p>";
+ //document.querySelector("#name").innerHTML = corrects;
+			
 
-
-
-
-
+}
 
 
 
@@ -53,9 +126,6 @@ document.querySelector("#game").innerHTML = html;
 
 //placeholder for letter guesses 
 
-//HTML NUMBER OF GUESSES REMAINING (start with 12)
-
-//Guess numbers go up
 
 //placeholders go away
 
@@ -71,3 +141,6 @@ document.querySelector("#game").innerHTML = html;
 
 //Once guessed name correctly play song
 
+
+
+            
