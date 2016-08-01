@@ -6,8 +6,14 @@
 
 
 
-var guessesLeft = 12;
+var maxGuesses =  12;
+var guessesLeft= 12;
 
+var losses = 0
+
+var wins = 0
+
+var li = document.getElementsByTagName("li");
 
 var correct = {
 	
@@ -52,29 +58,29 @@ var answer = ["b","e","a","c","h","b","o","y","s"];
 
 		
              if(userGuess === correct.b) {
- 			 guessesLeft--;
+ 			 wins++;
  			 document.getElementById("b").innerHTML = correct.b;
              
  			 
  			 }
  			
 			if(userGuess === correct.e) {
- 			 guessesLeft--;
+ 			 wins++;
  			  document.getElementById("e").innerHTML = correct.e;
            
              }
              if(userGuess === correct.a) {
- 			 guessesLeft--;
+ 			 wins++;
  			 document.getElementById("a").innerHTML = correct.a;
             
              }
              if(userGuess === correct.c) {
- 			guessesLeft--;
+ 			wins++;
  			 document.getElementById("c").innerHTML = correct.c;
             
              }
              if(userGuess === correct.h) {
- 			 guessesleft--;
+ 			 wins++;
  			 document.getElementById("h").innerHTML = correct.h;
             
              }
@@ -85,28 +91,42 @@ var answer = ["b","e","a","c","h","b","o","y","s"];
             
 
              }if(userGuess === correct.o) {
- 			 guessesLeft--;
+ 			 wins++;
  			 document.getElementById("o").innerHTML = correct.o;
             
              }
              if(userGuess === correct.y) {
- 			guessesLeft--;
+ 			wins++;
  			 document.getElementById("y").innerHTML = correct.y;
             
              }
 
               if(userGuess === correct.s) {
- 			 guessesLeft--;
+ 			 wins++;
  			 document.getElementById("s").innerHTML = correct.s;
             
-             }
+             }  
+
+             if (userGuess !== correct)
+             	guessesLeft--;
+         	
+         	 if (guessesLeft === 0) {
+                losses++; // restart game
+            
+            }
+
+            if (wins === 9) {
+            	var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia801408.us.archive.org/1/items/TheBeachBoys-GreatestHits/04%20Surfin%27%20U.S.A..mp3'></audio>"   
+
+               document.querySelector("#audio").innerHTML = audio;  
+ 
+
+            }
+            
          	
 
-		
 
-             else {
-             	document.getElementById("lettersGuessed").innerHTML = userGuess;
-             }
+
          
 
         
@@ -118,19 +138,18 @@ var answer = ["b","e","a","c","h","b","o","y","s"];
 
  
 
-var html = "<p> Letters Guessed </p>" + lettersGuessed + "<br><br><p>Guesses Left </p>" + guessesLeft;
+var html = "<p> Letters Guessed </p>" + lettersGuessed + "<br><br><p>Guesses Left </p>" + guessesLeft  + "<p> losses </p>" + losses;
 
 document.querySelector("#game").innerHTML = html;
 
 
 			
 
+
+
+
+
 }
-
-
-
-
-
 
 //html Current word
 
