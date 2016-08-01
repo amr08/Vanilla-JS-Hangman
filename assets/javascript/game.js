@@ -5,8 +5,8 @@
  alert("Press any key to get started");
 
 
-var wins = 0;
-var guessesleft = 12;
+
+var guessesLeft = 12;
 
 
 var correct = {
@@ -16,7 +16,7 @@ var correct = {
 	a: "a",
 	c: "c",
 	h: "h",
-	b2: "b",
+	secondb: "b",
 	o: "o",
 	y: "y",
 	s: "s",
@@ -26,7 +26,12 @@ var correct = {
 
 //answer: beachboys
 
-//var answer = ["b","e","a","c","h","b","o","y","s"];
+
+
+var answer = ["b","e","a","c","h","b","o","y","s"];
+
+
+         
 
 //HTML Wins and guesses
 
@@ -35,55 +40,64 @@ var correct = {
         document.onkeyup = function(event) {
 
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	
+	    
+	    
+		var lettersGuessed = userGuess;
 	   
+
+	    
 
 		//for(var i=0; i < answer.length; i++) {
 
 
 		
-             if(userGuess === "b") {
- 			 wins++;
- 			 var correctb = "<p> " + correct.b + " _ _ _ _ " + correct.b2 + "_ _ _ </p>";
-             document.querySelector("#name").innerHTML = correctb;
+             if(userGuess === correct.b) {
+ 			 guessesLeft--;
+ 			 document.getElementById("b").innerHTML = correct.b;
+             
+ 			 
  			 }
  			
-
-			if(userGuess === "e") {
- 			 wins++;
- 			 (correct.e);
+			if(userGuess === correct.e) {
+ 			 guessesLeft--;
+ 			  document.getElementById("e").innerHTML = correct.e;
            
              }
-             if(userGuess === "a") {
- 			 wins++;
- 			 console.log(correct.a);
+             if(userGuess === correct.a) {
+ 			 guessesLeft--;
+ 			 document.getElementById("a").innerHTML = correct.a;
             
              }
-             if(userGuess === "c") {
- 			 wins++;
- 			 console.log(correct.c);
+             if(userGuess === correct.c) {
+ 			guessesLeft--;
+ 			 document.getElementById("c").innerHTML = correct.c;
             
              }
-             if(userGuess === "h") {
- 			 wins++;
- 			 console.log(correct.h);
+             if(userGuess === correct.h) {
+ 			 guessesleft--;
+ 			 document.getElementById("h").innerHTML = correct.h;
             
              }
-            
+           
              
-             if(userGuess === "o") {
- 			 wins++;
- 			 console.log(correct.o);
+             if(userGuess === correct.secondb) {
+ 			 document.getElementById("secondb").innerHTML = correct.secondb;
             
 
-             }if(userGuess === "y") {
- 			 wins++;
- 			 console.log(correct.y);
+             }if(userGuess === correct.o) {
+ 			 guessesLeft--;
+ 			 document.getElementById("o").innerHTML = correct.o;
             
              }
-             if(userGuess === "s") {
- 			 wins++;
- 			 console.log(correct.s);
+             if(userGuess === correct.y) {
+ 			guessesLeft--;
+ 			 document.getElementById("y").innerHTML = correct.y;
+            
+             }
+
+              if(userGuess === correct.s) {
+ 			 guessesLeft--;
+ 			 document.getElementById("s").innerHTML = correct.s;
             
              }
          	
@@ -91,7 +105,7 @@ var correct = {
 		
 
              else {
-             	guessesleft--;
+             	document.getElementById("lettersGuessed").innerHTML = userGuess;
              }
          
 
@@ -102,17 +116,13 @@ var correct = {
 
 
 
-
  
 
-var html = "<p>Wins: " + wins + "</p>" +
-		"<p>Guessesleft " + guessesleft + "</p>";
+var html = "<p> Letters Guessed </p>" + lettersGuessed + "<br><br><p>Guesses Left </p>" + guessesLeft;
 
 document.querySelector("#game").innerHTML = html;
 
 
-//var corrects = "<p> _ _ _ _ _ _ _ _ _ </p>";
- //document.querySelector("#name").innerHTML = corrects;
 			
 
 }
@@ -140,6 +150,8 @@ document.querySelector("#game").innerHTML = html;
 
 
 //Once guessed name correctly play song
+
+
 
 
 
