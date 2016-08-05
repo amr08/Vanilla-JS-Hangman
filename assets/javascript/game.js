@@ -1,5 +1,5 @@
 var word = ["beachboys", "jackjohnson", "dickdale"];
-var random = Math.floor(Math.random() *3)
+var random = Math.floor(Math.random() * 3)
 var actualLetters = word[random];
 var length = actualLetters.length;  
 var hidden = [length];
@@ -14,9 +14,7 @@ var list = [];
 
 
 
-
-
-//fine
+//works
 function gameStart() {
     
     for(var i = 0; i < actualLetters.length; i++) {
@@ -32,24 +30,14 @@ output = "";
 
 }
 
-
-
 //end
 
 
+document.onkeypress = function(event) {
 
-
-
-
-   
-
-    document.onkeypress = function(event) {
-
- output = "";
+        output = "";
         var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
         
-
-      
             for(var j = 0; j < actualLetters.length; j++) {
 
                 if (userGuess == letters[j]) {
@@ -63,32 +51,26 @@ output = "";
 
                  }
 
-}
+            }
+
 document.getElementById("secretAnswer").innerHTML = output;
 
                 
 
-    
-
-       
-
-
-//this works!! Leave it
-     if(actualLetters.indexOf(userGuess) == - 1) {
+//Works!! Leave it
+if(actualLetters.indexOf(userGuess) == - 1) {
           
-        list.push(userGuess);
-        document.getElementById("answersGuessed").innerHTML = list;
-        guessesLeft--;
-        document.getElementById("guessesLeft").innerHTML = guessesLeft;
-     }
-      
+    list.push(userGuess);
+    document.getElementById("answersGuessed").innerHTML = list;
+    guessesLeft--;
+    document.getElementById("guessesLeft").innerHTML = guessesLeft;
+    }   
  //
      
     
-    
-    output = " ";
+    //music works!
+ output = " ";
 
-     
             if (correct < 0 && guessesLeft > 0 && actualLetters == "beachboys") {
                 totalWins++;
          
@@ -109,7 +91,7 @@ document.getElementById("secretAnswer").innerHTML = output;
                         var picture = "<img src='https://s-media-cache-ak0.pinimg.com/736x/80/0b/eb/800beb7840472ea335bcd4dfe59d4fca.jpg'>"
                         document.querySelector("#picture").innerHTML = picture;  
  
-}          
+                    }          
              if (correct < 0 && guessesLeft > 0 && actualLetters == "dickdale") {
                 totalWins++;
          
@@ -118,49 +100,23 @@ document.getElementById("secretAnswer").innerHTML = output;
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://images.alphacoders.com/216/216931.jpg'>"
                         document.querySelector("#picture").innerHTML = picture;  
- }
-                    else if (guessesLeft < 0) {
+                    }
+            else if (guessesLeft < 0) {
                         losses++;
                         document.getElementById("losses").innerHTML =  losses ;
                              //how to restart game!?!!?!?!?!?!
                      }
-
-            
-
-                     
-
-            
+         
 
 };
 
+//end
 
 window.onload = function() {
 
   gameStart();
   
   }
-
- music();
-  
-function music() {
-
-    if(letters == "beachboys") {
-        console.log("yes");
-    }
-
-    if(totalWins >= 1 && letters == "beachboys") {
-         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia801408.us.archive.org/1/items/TheBeachBoys-GreatestHits/04%20Surfin%27%20U.S.A..mp3'></audio>"   
-         document.querySelector("#audio").innerHTML = audio;  
-         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/onprinciple-beachboys-surfergirl-500.jpg'>"
-        document.querySelector("#picture").innerHTML = picture;  
- 
-                    }
-
-    }
- 
-
-
-
 
 
 
