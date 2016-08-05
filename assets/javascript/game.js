@@ -88,7 +88,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         document.getElementById("game").innerHTML =  totalWins;
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia601008.us.archive.org/31/items/JackJohnsonSittingWaitingWishingToqueMP3/jack%20johnson%20banana%20pancakes%20-%20[Toque%20MP3].mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
-                        var picture = "<img src='https://s-media-cache-ak0.pinimg.com/736x/80/0b/eb/800beb7840472ea335bcd4dfe59d4fca.jpg'>"
+                        var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/800beb7840472ea335bcd4dfe59d4fca.jpg'>"
                         document.querySelector("#picture").innerHTML = picture;  
  
                     }          
@@ -98,7 +98,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         document.getElementById("game").innerHTML =  totalWins;
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia801606.us.archive.org/31/items/DickDaleAndTheDeltones-01-50/DickDaleAndTheDel-tones-Misirlou.mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
-                        var picture = "<img src='https://images.alphacoders.com/216/216931.jpg'>"
+                        var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/216931.jpg'>"
                         document.querySelector("#picture").innerHTML = picture;  
                     }
             else if (guessesLeft < 0) {
