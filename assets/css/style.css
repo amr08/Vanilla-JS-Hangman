@@ -35,6 +35,12 @@ h1 {
 
 }
 
+h3 {
+	color: tan;
+	position: absolute;
+	
+}
+
 ul li{
 	display: inline;
 	text-align: center;
