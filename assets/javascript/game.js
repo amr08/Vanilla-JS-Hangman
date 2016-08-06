@@ -3,7 +3,7 @@ var random = Math.floor(Math.random() * 5)
 var actualLetters = word[random];
 var length = actualLetters.length;  
 var hidden = [];
-var guessesLeft = 15;
+var guessesLeft = 10;
 var correct = length;
 var output = "";
 //var letters = actualLetters.split ('');
@@ -82,7 +82,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/onprinciple-beachboys-surfergirl-500.jpg'>"
                         document.querySelector("#picture").innerHTML = picture; 
                        
-  
+  restart();
                        }
 
                     
@@ -94,8 +94,9 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia601008.us.archive.org/31/items/JackJohnsonSittingWaitingWishingToqueMP3/jack%20johnson%20banana%20pancakes%20-%20[Toque%20MP3].mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/800beb7840472ea335bcd4dfe59d4fca.jpg'>"
-                        document.querySelector("#picture").innerHTML = picture;  
-                         
+                        document.querySelector("#picture").innerHTML = picture; 
+                        restart(); 
+                        
                     }   
 
              else if (correct <= 0 && guessesLeft > 0 && actualLetters == "dickdale") {
@@ -106,39 +107,48 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/216931.jpg'>"
                         document.querySelector("#picture").innerHTML = picture; 
-                              
+                        restart();
                     }
                    
 
              else if (correct <= 1 && guessesLeft > 0 && actualLetters == "311") {
                 wins++;
          
-                        document.getElementById("game").innerHTML =  wins++;
+                        document.getElementById("game").innerHTML =  wins;
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia601008.us.archive.org/18/items/311IllBeHereAwhile/311%20-%20I%27ll%20Be%20Here%20Awhile.mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/311thumb2_400x400.jpg'>"
                         document.querySelector("#picture").innerHTML = picture; 
-                           
+                           anotherRestart();
                     }
 
             else if (correct <= 0 && guessesLeft > 0 && actualLetters == "bobmarley") {
                 wins++;
          
-                        document.getElementById("game").innerHTML =  wins++;
+                        document.getElementById("game").innerHTML =  wins;
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia802605.us.archive.org/9/items/BobMarley_201410/Bob%20Marley%20-%20DISCOGRAFIA/Bob%20Marley-Legend/15%20Jamming.mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
-                        var picture = "<img src=''>"
+                        var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/bob-marley-beach-6929.jpg'>"
                         document.querySelector("#picture").innerHTML = picture; 
-                         
+                         restart();
                     }
+
 
             else if (guessesLeft < 0) {
                         losses++;
                         location.reload ();
         
                     }
-         //How to count wins without reload
         
+        
+         function restart() {
+          if (wins === 2) {
+        location.reload ();
+
+    }
+ }
+
+
 };
  
 
@@ -149,6 +159,7 @@ window.onload = function() {
   gameStart();
   
   }
+  
 
 
 
