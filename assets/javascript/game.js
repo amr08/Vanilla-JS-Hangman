@@ -1,4 +1,4 @@
-var word = ["beachboys", "jackjohnson", "dickdale", "311"];
+var word = ["beachboys", "jackjohnson", "dickdale", "311", "sublime"];
 var random = Math.floor(Math.random() * 4)
 var actualLetters = word[random];
 var length = actualLetters.length;  
@@ -112,6 +112,17 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia601008.us.archive.org/18/items/311IllBeHereAwhile/311%20-%20I%27ll%20Be%20Here%20Awhile.mp3'></audio>"   
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/beautiful-beach-wide-hd-wallpaper-for-desktop-background-download-beach-images-free%20copy.jpg'>"
+                        document.querySelector("#picture").innerHTML = picture; 
+                              
+                    }
+
+            if (correct <= 0 && guessesLeft > 0 && actualLetters == "sublime") {
+                totalWins++;
+         
+                        document.getElementById("game").innerHTML =  totalWins;
+                        var audio = "<audio autoplay = 'autoplay' >" + "<source src='https://ia601008.us.archive.org/18/items/311IllBeHereAwhile/311%20-%20I%27ll%20Be%20Here%20Awhile.mp3'></audio>"   
+                        document.querySelector("#audio").innerHTML = audio;  
+                        var picture = "<img src=''>"
                         document.querySelector("#picture").innerHTML = picture; 
                               
                     }
