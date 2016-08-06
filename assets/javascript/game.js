@@ -119,7 +119,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                         document.querySelector("#audio").innerHTML = audio;  
                         var picture = "<img src='https://raw.githubusercontent.com/amr08/week-3-game/master/assets/images/311thumb2_400x400.jpg'>"
                         document.querySelector("#picture").innerHTML = picture; 
-                           anotherRestart();
+                           restart();
                     }
 
             else if (correct <= 0 && guessesLeft > 0 && actualLetters == "bobmarley") {
