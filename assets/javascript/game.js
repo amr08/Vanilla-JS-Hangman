@@ -3,7 +3,7 @@ var random = Math.floor(Math.random() * 5)
 var actualLetters = word[random];
 var length = actualLetters.length;  
 var hidden = [];
-var guessesLeft = 10;
+var guessesLeft = 12;
 var correct = length;
 var output = "";
 //var letters = actualLetters.split ('');
@@ -134,7 +134,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                     }
 
 
-            else if (guessesLeft < 0) {
+            else if (guessesLeft =< 0) {
                         losses++;
                         location.reload ();
         
