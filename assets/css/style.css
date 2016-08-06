@@ -36,9 +36,14 @@ h1 {
 }
 
 h3 {
-	color: tan;
-	position: absolute;
+	color: #00bc8c;
+	font-size: 130px;
 	
+	float: right;
+	margin-top: -160px;
+	margin-right: 150px;
+
+
 }
 
 ul li{
