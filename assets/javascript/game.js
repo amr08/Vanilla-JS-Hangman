@@ -134,7 +134,7 @@ if(actualLetters.indexOf(userGuess) == - 1) {
                     }
 
 
-            else if (guessesLeft =< 0) {
+            else if (guessesLeft <= 0) {
                         losses++;
                         location.reload ();
         
